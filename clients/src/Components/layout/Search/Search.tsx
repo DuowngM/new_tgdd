@@ -23,7 +23,7 @@ const Search = () => {
   }
   const [key, setKey] = useState<string | null>("");
   const [products, setProducts] = useState<Products[]>([]);
-  
+
   const location = useLocation();
   const handleGetKey = () => {
     const searchParams = new URLSearchParams(location.search);
@@ -53,7 +53,7 @@ const Search = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key]);
-  const flaguserJSON = localStorage.getItem("flaguser");  
+  const flaguserJSON = localStorage.getItem("flaguser");
   const flaguser = flaguserJSON ? JSON.parse(flaguserJSON) : null;
   const dispatch = useAppDispatch();
   const userId = flaguser?.user_id;
@@ -124,7 +124,7 @@ const Search = () => {
                       <b>{product.product_name}</b>
                     </p>
                     <p className="price-product">
-                      {product.price.toLocaleString() + "₫"}
+                      {product.price.toLocaleString() + "$"}
                     </p>
                     <p>
                       Stocks:{" "}

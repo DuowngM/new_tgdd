@@ -471,14 +471,14 @@ const Cart = () => {
           </div>
           <hr />
           <div className="total-money">
-            <p>Tổng tiền: {calculateTotalMoney().toLocaleString() + "₫"}</p>
+            <p>Tổng tiền: {calculateTotalMoney().toLocaleString() + "$"}</p>
             <p>
               Mã giảm giá:{" "}
               {handleVoucher?.voucher_discount
                 ? handleVoucher.voucher_discount + "%"
                 : "Không có voucher áp dụng"}
             </p>
-            <p>Thanh toán: {calculatePaymentTotal().toLocaleString() + "₫"}</p>
+            <p>Thanh toán: {calculatePaymentTotal().toLocaleString() + "$"}</p>
             <button className="btn-paying" onClick={handlePay}>
               Thanh toán
             </button>

@@ -106,7 +106,7 @@ const Orders = () => {
                 <>
                   <tr key={index}>
                     <td>{index + 1}</td>
-                    <td>{order.total.toLocaleString() + "₫"}</td>
+                    <td>{order.total.toLocaleString() + "$"}</td>
                     <td>{order.note}</td>
                     <td>
                       {" "}
@@ -127,7 +127,7 @@ const Orders = () => {
               <tr>
                 <td colSpan={7} style={{ fontSize: "20px" }}>
                   Tổng tiền đã mua hàng:{" "}
-                  <b>{totalAmount.toLocaleString() + "₫"}</b>
+                  <b>{totalAmount.toLocaleString() + "$"}</b>
                 </td>
               </tr>
             </tfoot>
@@ -162,12 +162,12 @@ const Orders = () => {
                         <td>
                           <img src={orderDetail.product_image} width={100} />
                         </td>
-                        <td>{orderDetail.price.toLocaleString() + " ₫"}</td>
+                        <td>{orderDetail.price.toLocaleString() + "$"}</td>
                         <td>{orderDetail.quantity}</td>
                         <td>
                           {(
                             orderDetail.price * orderDetail.quantity
-                          ).toLocaleString() + "₫"}
+                          ).toLocaleString() + "$"}
                         </td>
                         <td width={400}>{orderDetail.address}</td>
                       </tr>

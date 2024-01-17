@@ -133,7 +133,7 @@ const AdminOrder = () => {
                     <tr key={index}>
                       <td>{index + 1}</td>
                       <td>{order.phoneNumber}</td>
-                      <td>{order.total.toLocaleString() + "₫"}</td>
+                      <td>{order.total.toLocaleString() + "$"}</td>
                       <td>{order.user_name}</td>
                       <td>
                         {moment(order.createdDate).format(
@@ -213,12 +213,12 @@ const AdminOrder = () => {
                           <td>
                             <img src={orderDetail.product_image} width={100} />
                           </td>
-                          <td>{orderDetail.price.toLocaleString() + "₫"}</td>
+                          <td>{orderDetail.price.toLocaleString() + "$"}</td>
                           <td>{orderDetail.quantity}</td>
                           <td>
                             {(
                               orderDetail.price * orderDetail.quantity
-                            ).toLocaleString() + "₫"}
+                            ).toLocaleString() + "$"}
                           </td>
                           <td>{orderDetail.address}</td>
                         </tr>

@@ -169,7 +169,7 @@ const AdminAddProduct = () => {
                       </td>
                       <td>{product.product_name}</td>
                       <td>{product.product_stocks}</td>
-                      <td>{product.price.toLocaleString() + "₫"}</td>
+                      <td>{product.price.toLocaleString() + "$"}</td>
                       {/* <td width={400}>{product.description}</td> */}
                       <td>{getCategoryName(product.categoryId)}</td>
                       <td>{getBrandName(product.brandId)}</td>
