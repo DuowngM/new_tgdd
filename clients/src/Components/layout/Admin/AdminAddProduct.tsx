@@ -5,11 +5,9 @@ import SidebarAdmin from "./SidebarAdmin";
 import { useEffect, useState } from "react";
 import { notification } from "antd";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 const AdminAddProduct = () => {
-  const flaguserJSON = localStorage.getItem("flaguser");
-  const flaguser = flaguserJSON ? JSON.parse(flaguserJSON) : null;
-  const navigate = useNavigate();
+  // const flaguserJSON = localStorage.getItem("flaguser");
   // useEffect(() => {
   //   if (flaguser?.roles != 1) {
   //     navigate("/");
@@ -47,13 +45,17 @@ const AdminAddProduct = () => {
     setNewProduct({ ...newProduct, [target.name]: target.value });
   };
   const { product_name, product_stocks, price, description } = newProduct;
-  const [images, setImages] = useState<File[]>([]);
+  // const [images, setImages] = useState<File[]>([]);
   const [category, setCategory] = useState<CategoryList[] | null>([]);
   const [selectedCategory, setSelectedCategory] = useState<number>(0);
   const [selectedBrand, setSelectedBrand] = useState<number>(0);
   const [brand, setBrand] = useState<BrandList[] | null>([]);
   const [newId, setNewId] = useState<number>(0);
+  console.log(newId);
+
   const [mainImage, setMainImage] = useState("");
+  console.log(mainImage);
+  
   const loadCategory = async () => {
     const response = await axios.get("http://localhost:8000/category");
     setCategory(response.data.allCategory);
@@ -127,13 +129,13 @@ const AdminAddProduct = () => {
       console.log(error);
     }
   };
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = e.target.files;
-    if (files && files.length > 0) {
-      const fileArray = Array.from(files);
-      setImages([...images, ...fileArray]);
-    }
-  };
+  // const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const files = e.target.files;
+  //   if (files && files.length > 0) {
+  //     const fileArray = Array.from(files);
+  //     setImages([...images, ...fileArray]);
+  //   }
+  // };
   const [selectedMedia, setSelectedMedia] = useState("");
   const [preview, setPreviewSrc] = useState("");
   const handleAddMedia = (event: any) => {

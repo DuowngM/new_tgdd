@@ -8,13 +8,13 @@ import Modal from "react-bootstrap/Modal";
 import publicAxios from "../../../configAxios/publicAxios";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CancelIcon from "@mui/icons-material/Cancel";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import moment from "moment";
 import privateAxios from "../../../configAxios/pritvateAxios";
 const AdminOrder = () => {
-  const flaguserJSON = localStorage.getItem("flaguser");
-  const flaguser = flaguserJSON ? JSON.parse(flaguserJSON) : null;
-  const navigate = useNavigate();
+  // const flaguserJSON = localStorage.getItem("flaguser");
+  // const flaguser = flaguserJSON ? JSON.parse(flaguserJSON) : null;
+  // const navigate = useNavigate();
   // useEffect(() => {
   //   if (flaguser?.roles != 1) {
   //     navigate("/");
@@ -70,7 +70,7 @@ const AdminOrder = () => {
     }
   };
 
-  const handleComplete = async (orderId: number ) => {
+  const handleComplete = async (orderId: number) => {
     const response = await privateAxios.put(`order/${orderId}`);
     if (response.status === 200) {
       notification.success({

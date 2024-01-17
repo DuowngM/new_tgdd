@@ -6,15 +6,15 @@ import { useEffect, useState } from "react";
 import publicAxios from "../../../configAxios/publicAxios";
 import { Pagination, notification } from "antd";
 import ChangeCircleIcon from "@mui/icons-material/ChangeCircle";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { Input } from "antd";
 import privateAxios from "../../../configAxios/pritvateAxios";
 const { Search } = Input;
 
 const AdminAddProduct = () => {
-  const flaguserJSON = localStorage.getItem("flaguser");
-  const flaguser = flaguserJSON ? JSON.parse(flaguserJSON) : null;
-  const navigate = useNavigate();
+  // const flaguserJSON = localStorage.getItem("flaguser");
+  // const flaguser = flaguserJSON ? JSON.parse(flaguserJSON) : null;
+  // const navigate = useNavigate();
   // useEffect(() => {
   //   if (flaguser?.roles != 1) {
   //     navigate("/");

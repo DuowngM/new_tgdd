@@ -16,7 +16,7 @@ const rateSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(renderRate.pending, (state: State, action) => {
+      .addCase(renderRate.pending, (state: State) => {
         state.loading = true;
       })
       .addCase(renderRate.fulfilled, (state: State, action) => {

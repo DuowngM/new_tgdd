@@ -37,10 +37,10 @@ export class CartService {
       throw new BadRequestException(error.message);
     }
   }
-  async addToCart(product, res: Response) {
+  async addToCart(product: any, res: Response) {
     try {
       const existingProductInCart = await this.cartRepository.findOne({
-        where: { productId: product.productId },
+        where: { productId: product.productId, user_id: product.userId },
       });
       if (existingProductInCart) {
         existingProductInCart.quantity += 1;

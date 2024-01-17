@@ -17,7 +17,7 @@ const cartSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(renderCart.pending, (state: State, action) => {
+      .addCase(renderCart.pending, (state: State) => {
         state.loading = true;
       })
       .addCase(renderCart.fulfilled, (state: State, action) => {
@@ -31,6 +31,8 @@ export const addToCart = createAsyncThunk(
   "addToCart",
   async ({ productId, userId }: { productId: number; userId: number }) => {
     try {
+      console.log("11111", productId, userId);
+
       const response = await publicAxios.post("/cart", {
         productId,
         userId,

@@ -32,6 +32,8 @@ function Header() {
     quantity: number;
   }
   const [cart, setCart] = useState<Cart[] | null>([]);
+  console.log(cart);
+
   const loadCart = async () => {
     const response = await publicAxios.get(`cart/${flaguser?.user_id}`);
     if (response.data.status === 200) {
@@ -72,8 +74,6 @@ function Header() {
               <button type="submit" className="button_search">
                 <i className="fa-solid fa-magnifying-glass"></i>
               </button>
-
-              
             </form>
             <div
               className="name-order"

@@ -33,6 +33,7 @@ const Home = () => {
     sold: number;
   }
   const [isLoading, setIsLoading] = useState(true);
+  console.log(isLoading);
 
   const [products, setProducts] = useState<Products[]>([]);
   const flaguserJSON = localStorage.getItem("flaguser");
@@ -266,7 +267,7 @@ const Home = () => {
                         <b>{product.product_name}</b>
                       </p>
                       <p className="price-product">
-                        {product.price.toLocaleString() + "₫"}
+                        {product.price.toLocaleString() + "$"}
                       </p>
                       <p>
                         <b>
